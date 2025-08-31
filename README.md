@@ -1,3 +1,32 @@
+# Projeto - Recomendador de Produtos RD Station
+
+Este projeto foi desenvolvido como parte de um teste técnico para vaga de Frontend. A ideia é permitir que o usuário selecione preferências e funcionalidades que deseja em um produto, e com base nisso, o sistema retorna uma recomendação.
+
+## 🧩 Funcionalidade
+
+* O usuário pode marcar preferências e funcionalidades.
+* É possível escolher entre:
+
+  * **Produto único**: retorna só o mais compatível.
+  * **Múltiplos produtos**: retorna uma lista dos mais compatíveis.
+* A recomendação é feita comparando as seleções do usuário com os dados de cada produto.
+
+## 📝 Alterações que fiz durante o teste
+
+* Adicionei a lib **react-hot-toast** para mostrar mensagens de erro.
+* No hook de produtos, removi um `slice` que estava limitando para só 2 preferências e 2 funcionalidades por produto — agora mostra tudo.
+* No hook `useRecommendations`, tinha um estado `recommendations` que não estava sendo usado (já estava no App), então removi pra deixar mais limpo.
+
+## 🧠 Como funciona a recomendação
+
+Cada produto tem suas preferências e funcionalidades. Quando o usuário seleciona as dele, o sistema compara e conta quantas batem com cada produto. Quanto mais batidas (match), maior a chance do produto ser recomendado.
+
+No modo “Produto único”, retorna só o mais compatível.
+No modo “Múltiplos produtos”, retorna todos os que tiverem alguma correspondência, ordenados do melhor pro pior.
+No caso de empate entre produtos, é apresentado o último produto válido para aquele match.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Teste Técnico - Recomendador de Produtos RD Station
 
 Este projeto é parte do teste técnico para a vaga de desenvolvedor front-end na RD Station. O objetivo principal é implementar a lógica de recomendação de produtos RD Station em uma aplicação web existente.
@@ -95,7 +124,7 @@ Certifique-se de que todos os critérios de aceite são atendidos durante o dese
 
 ## Autor
 
-Desenvolvido por [Seu Nome]
+Desenvolvido por @VanaDias
 
 ## Licença
 
